@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    /// Init / Required Init --&gt; Used to superclass a subclass
+    var vc : UIViewController?
+    init (vc: UIViewController) {
+        self.vc = vc
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder : NSCoder) {
+        self.vc = ViewController()
+        super.init(coder: coder)
+    }
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C185962D-829B-4B8A-A838-42A73572069B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Init / Required Init - SubClass - SuperClass </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

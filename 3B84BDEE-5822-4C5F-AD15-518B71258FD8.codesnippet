@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+import Foundation
+import UIKit
+
+
+// To get JSON DATA
+fileprivate func getData() {
+    let url = URL(string: "https://jsonplaceholder.typicode.com/posts")
+    
+    URLSession.shared.dataTask(with: url) { (data, response, error) in
+        do {
+            let users = try JSONDecoder().decode([User].self, from: data!)
+            for user in users {
+                print("id \(User.id) Title: \(User.title), Body \(User.body)")
+            }
+        }
+        catch {
+            print("error \(error)")
+        }
+    }.resume()
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3B84BDEE-5822-4C5F-AD15-518B71258FD8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JSON - Fetch </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

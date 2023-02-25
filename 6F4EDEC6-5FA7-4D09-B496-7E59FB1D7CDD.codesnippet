@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+import Foundation
+import UIKit
+import Combine
+
+// Impliments User-timer
+class AppTimer  {
+    
+    @Published var counter: Int = 0
+    
+    var subscribers = Set&lt;AnyCancellable&gt;()
+    init() { setupTimer() }
+    
+    func setupTimer() {
+        Timer
+            .publish(every: 1, on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] count in
+                guard let self = self else { return }
+                self.counter+=1
+                // print("[!][COUNTER] \(count)")
+            }
+            .store(in: &amp;subscribers)
+    }
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6F4EDEC6-5FA7-4D09-B496-7E59FB1D7CDD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AppTimer</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

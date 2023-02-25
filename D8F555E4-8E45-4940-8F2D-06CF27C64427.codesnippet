@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let formatter = DateFormatter()
+formatter.dateFormatter = "HH:mm EEE, dd MMM y"
+decoder.dateDecodingStrategy = .formatted(formatter)
+
+let decodedData = try JSONDecoder().decode(dataModal.self, from: jsonData) {
+    catch let error {
+        print("decode error \(error.localizedDescription)")
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D8F555E4-8E45-4940-8F2D-06CF27C64427</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>DateForematter - JSON </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

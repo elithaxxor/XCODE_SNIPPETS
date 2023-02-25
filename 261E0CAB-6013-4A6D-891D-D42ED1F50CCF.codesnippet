@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    func getJson() -&gt; Data? {
+        let path = Bundle.main.path(forResource: "data", ofType: "json")!
+        do {
+            let data = try String(contentsOfFile: path).data(using: .utf8)
+            print("[+] Json sucessfully received")
+            return data
+        } catch  {
+            print("[-] Error, unable to get JSON ")
+        }
+        
+        return nil
+    }
+    </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>261E0CAB-6013-4A6D-891D-D42ED1F50CCF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>CRUD - Get Json</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

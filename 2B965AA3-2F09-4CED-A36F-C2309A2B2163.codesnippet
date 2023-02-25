@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+/// use this to access an element or range within a string
+/// returns a specific range in string, or specific place
+
+func indexStringRange() {
+    var str = "hello world, this is swifty"
+    var indexChar = str[str.index(str.startIndex, offsetBy: 5)]
+    
+    var indexRange = str[str.index(str.startIndex, offsetBy: 11)..&lt;str.index(str.startIndex, offsetBy: 4)]
+    
+    print(indexChar) // charicter
+    print(indexRange) // range
+
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2B965AA3-2F09-4CED-A36F-C2309A2B2163</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>String  | Index Range of String</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

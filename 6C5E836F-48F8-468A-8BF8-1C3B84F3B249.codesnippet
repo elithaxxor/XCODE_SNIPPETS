@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+// This function is used to spplit a array matrix and return the count of each individual split
+func splitArrAndCount(sentences : [String]) {
+    for i in 0..&lt;sentences.count {
+        var childCount = sentences[i].split(separator: " ").count
+        print(sentences[i].split(separator:  " ")) // splits arr by ""
+        print(sentences[i].split(separator:  " ").count) // returns lenght of each individual sentence
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6C5E836F-48F8-468A-8BF8-1C3B84F3B249</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My Code Snippet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

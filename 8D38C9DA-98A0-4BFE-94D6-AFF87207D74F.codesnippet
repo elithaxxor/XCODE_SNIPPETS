@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    func parseJson(jsonData: Data) {
+        do {
+            routeData = try JSONDecoder().decode(Route.self, from: jsonData )
+            
+            for feature in routeData?.features ?? [] {
+                let loc = CLLocation (
+                    latitude: feature.geometry.coordinates[1],
+                    longitude:  feature.geometry.coordinates[0]
+                )
+                routeCoordinates.append(loc)
+            }
+        } catch {
+            print("error in func parseJson --&gt; feature coordinates ")
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8D38C9DA-98A0-4BFE-94D6-AFF87207D74F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>CRUD - JSON Parse / Update data -</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

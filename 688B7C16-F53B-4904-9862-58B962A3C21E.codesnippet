@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Foundation
+import Combine
+import SwiftUI
+
+
+/// Combine - Passthrough subject--&gt; us it to pass or inject objects to the subscriber
+///
+var subscription = Set&lt;AnyCancellable&gt;
+var passthrough = PassthroughSubject&lt;Int, Never&gt;()
+
+
+passthrough
+    .subscribe(on: DispatchQueue.main)
+    .sink(receiveValue: { value in
+        print("recieved valie \(value)")
+        print(Thread.current)
+    }).store(in: $subscription)
+
+passthrough.send(1)
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>688B7C16-F53B-4904-9862-58B962A3C21E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Combine - Passthrough subject</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

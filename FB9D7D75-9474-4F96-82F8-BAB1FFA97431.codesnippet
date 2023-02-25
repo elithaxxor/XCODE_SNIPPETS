@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  DuplicateZeros.swift
+
+
+/*
+ Given a fixed-length integer array arr, duplicate each occurrence of zero, shifting the remaining elements to the right.
+ */
+
+import Foundation
+
+var dupArr = [1, 3, 4 , 5, 2 , 9 , 2]
+duplicateZeros(arr: dupArr)
+
+
+func duplicateZeros(_ arr: inout [Int]) {
+    var index = 0
+    while (index &lt; arr.count) {
+        if arr[index] == 0 {
+            index += 1
+            arr.insert(0, at: index)
+            arr.removeLast()
+        }
+        index += 1
+    }
+}
+/// Input: arr = [1,0,2,3,0,4,5,0]
+/// Expected Output: [1,0,0,2,3,0,0,4]
+
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FB9D7D75-9474-4F96-82F8-BAB1FFA97431</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Array - Duplicate Zeroes </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

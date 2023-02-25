@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    // MARK: Constriants -- button / usernamefield
+    private func addConstraint() {
+        
+        NSLayoutConstraint.activate([
+            
+            userNameField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            userNameField.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 50),
+            userNameField.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -50),
+            userNameField.heightAnchor.constraint(equalToConstant: 50),
+            
+            
+            button.topAnchor.constraint(equalTo: userNameField.bottomAnchor, constant: 20),
+            button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
+            button.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50),
+            button.heightAnchor.constraint(equalToConstant: 50)
+            
+        ])
+    }
+    
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E00D9068-0C5E-43A9-B908-24BE4BC3098C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Constraint - NSLayout - UserTextField / Button </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

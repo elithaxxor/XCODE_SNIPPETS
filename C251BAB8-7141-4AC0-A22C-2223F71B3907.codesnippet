@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    private var isActive = false
+    @IBAction func btnClicked(_ sender : Any) {
+        animateAlert(show: !isActive)
+    }
+    @IBOutlet weak var alertView : UIView!
+    @IBOutlet weak var alertViewTopConstraint : NSLayoutConstraint!
+ 
+    
+    
+    
+    
+    private func animateAlert(show: Bool) {
+        UIView.animate(withDuration: 0.6) { [weak self] in
+            if show {
+                self?.showAlert()
+            }
+            else {
+                self?.hideAlert()
+            }
+            
+            self?.view.layoutIfNeeded()
+        }
+    }
+    
+    private func showAlert() {
+        isActive = true
+        alertViewTopConstraint.constant = 20
+    }
+    private func hideAlert() {
+        isActive = false
+        alertViewTopConstraint = -(alertView.frame.origin.y) - alertView.frame.height
+
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C251BAB8-7141-4AC0-A22C-2223F71B3907</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Animate Alert - Basic </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    
+    var user = CurrentValueSubject&lt;User, Never&gt;(User(name: "Bob", id: 1))
+    var subscrptions = Set&lt;AnyCancellable&gt;
+    var userID = Int = 1 {
+        didSet {
+            print("userId Changed")
+        }
+    }
+    
+    init() { /// maps the "id" portion of CurrentValueSubject in
+        user.map{(\.id) }
+            // .assign(to: \.userID, on: self)
+            .sink { [unowned self] value in
+                userId = value
+            }
+            .store(in: &amp;subscriptions)
+    }
+    </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CE149D6F-00D7-4D08-AF29-4F34B3A0ED55</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Combine - .sink reference weak self</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  TabBarViewController.swift
+//  ChatApp3000
+//
+//  Created by Adel Al-Aali on 1/19/23.
+//
+
+import UIKit
+
+class TabBarViewController: UITabBarController {
+
+    var chatList : UIViewController
+    
+    init (chatList: UIViewController) {
+        self.chatList = chatList
+        
+        super.init (nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("coder has not been impimented")
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupVC()
+    }
+    // MARK: Setup tab icons on navbar (footer)
+    //.. UINavigationController, and tabBarItem
+    fileprivate func setupVC() {
+        let settings = SettingsViewController()
+            let nav1 = UINavigationController(rootViewController: chatList)
+            let nav2 = UINavigationController(rootViewController: settings)
+
+            nav1.tabBarItem = UITabBarItem(title: "hi", image: UIImage(systemName: "messages"), tag: 1)
+            nav2.tabBarItem = UITabBarItem(title: "tweakz",  image: UIImage(systemName: "gear"), tag: 2)
+
+            setViewControllers([nav1, nav2], animated: true)
+        }
+
+
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>80DBA618-A4E5-44EE-A315-1EA648D4392C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>View - TabBar - FOOTER</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

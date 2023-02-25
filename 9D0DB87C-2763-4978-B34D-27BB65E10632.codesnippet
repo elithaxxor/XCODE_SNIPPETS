@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// MARK: To print board
+    internal func printBoard() {
+        for r in 1...5 {
+            var rowIndexPath = IndexPath.init(index: r)
+            let pos = Board(indexPath: rowIndexPath)
+            print("[BOARD] [ROW] - \(r)");
+            print("[BOARD] [IndexPath] --&gt; \(rowIndexPath)");
+            
+        }; for c in 1...5 {
+            var colIndexPath = IndexPath.init(index: c)
+            var posC = Board(indexPath: colIndexPath)
+            print("[BOARD] [ROW] - \(c) ");
+            print("[BOARD] [IndexPath] --&gt; \(colIndexPath)");
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9D0DB87C-2763-4978-B34D-27BB65E10632</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Matrix - Print Board </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

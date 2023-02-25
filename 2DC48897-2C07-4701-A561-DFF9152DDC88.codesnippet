@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// to reverse an array after determining left and right pointers
+
+func reverseArr(_ arr : inout [Int], left : Int, right : Int) {
+    var left = left
+    var right = right
+    while left &lt; right {
+        var temp = arr[left]
+        arr[left] = arr[right]
+        arr[right] = arr[left]
+        arr[left] = temp
+        left += 1
+        right -= 1
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2DC48897-2C07-4701-A561-DFF9152DDC88</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Array - Reverse Array </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

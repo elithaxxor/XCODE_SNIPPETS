@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    fileprivate func addConstriants() {[
+        
+        // imageView : center and top
+        imageView.widthAnchor.constraint(equalToConstant: 100),
+        imageView.heightAnchor.constraint(equalToConstant: 80),
+        imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        
+        // label is attahed to imageViews bottom anchor
+        label.leftAnchor.constraint(equalTo: view.leftAnchor),
+        label.rightAnchor.constraint(equalTo:  view.rightAnchor),
+        label.heightAnchor.constraint(equalToConstant: 80),
+        label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+        
+        
+        // button is attached to labels bottom anchor
+        button.leftAnchor.constraint(equalTo: view.leftAnchor),
+        button.rightAnchor.constraint(equalTo:  view.rightAnchor),
+        button.heightAnchor.constraint(equalToConstant: 50),
+        button.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 50)
+        
+        
+        ]
+        
+    }
+
+
+
+
+fileprivate func mapConstraints() {
+    view.addSubview(mapView)
+    mapView.translatesAutoresizingMaskIntoConstraints = false
+    mapView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+    mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+    mapView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+    mapView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+    
+}
+
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6FB272C9-9EE7-4674-BB9D-1C218FDB429C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>View - Constriants</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    
+    // sets userdefaults to swtich from darkmode and light
+    let styleSegmentedControl = UISegmentedControl()
+    let defaults = UserDefaults.standard
+    var isDarkMode = false
+    struct keys {
+        static let darkMode = "preferDarkMode"
+        static let defaultUser = "me"
+        static let loggedDirections : [MKDirections] = []
+    }
+    func setUserDefault() {
+        defaults.set(isDarkMode, forKey: Keys.darkMode)
+        defaults.set(defaultUser, forKey: Keys.defaultUser)
+        defaults.set(loggedDirections, forKey: Keys.loggedDirections)
+    }
+    
+    // [retrieves data] checks user defualts, switches if bool
+    func checkUserDefault() {
+        let darkMode = defaults.bool(forKey: keys.darkMode)
+        if isDarkMode {
+            isDarkMode = true
+            styleSegmentedControl.selectedSegmentIndex = 1
+        }
+    }
+    </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>521BB982-6318-4FFA-9BB8-6502581B683D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Save Data - USER DEFAULTS </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+func flipAndInvertImage(_ image: [[Int]]) -&gt; [[Int]] {
+    if image.count == 0 {
+        return []
+    }
+    var image = image
+    image = invert(&amp;image)
+    image = flip(&amp;image)
+    return image
+}
+
+// 'flip' or reverse array
+func flip (_ image: inout [[Int]]) -&gt; [[Int]] {
+    for i in 0..&lt;image.count {
+        var p1 = 0
+        var p2 = image[i].count - 1
+        
+        while p1 &lt; p2 {
+            let temp = image[p1][p2]
+            image[p1][p2] = image[p2][p1]
+            image[p2][p1] = temp
+            p1 += 1
+            p2 -= 1
+        }
+    }
+    return image
+}
+// changes matrix 0's to 1's and 1's to 0's
+func invert (_ image: inout [[Int]]) -&gt; [[Int]] {
+    for i in 0..&lt;image.count {
+        for j in 0..&lt;image.count {
+            if image[i][j] == 1 { image[i][j] = 0  } // start inversion logic
+            else if image[i][j] == 0 { image[i][j] = 1  }
+        }
+    }
+    return image
+}
+
+var image = [[1,1,0],[1,0,1],[0,0,0]]
+var res = flipAndInvertImage(image)
+print(res)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DAD52657-4777-4FC9-B9A0-9BCF347B8EEE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Matrix / Array - Flip and Invert Image</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

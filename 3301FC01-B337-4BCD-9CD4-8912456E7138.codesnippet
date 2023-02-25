@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+
+// MARK: - HomeVC Navigation
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    // TODO: See which variable passes.
+    if segue.identifier == "homeBtn2search" {
+        let homeBtn2search = segue.destination as? SearchTableViewController
+        
+        let input = self.textFieldInput.text ?? "GOOG"
+        homeBtn2search?.searchController.searchBar.text = input
+        
+        
+        print("input \(input)")
+        print("homeBtn2search?.homeTextValueVC  \(input.self)")
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3301FC01-B337-4BCD-9CD4-8912456E7138</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Button Segue</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

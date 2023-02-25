@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 'flip' or reverse array
+func flip (_ image: inout [[Int]]) -&gt; [[Int]] {
+    for i in 0..&lt;image.count {
+        var p1 = 0
+        var p2 = image[i].count - 1
+        
+        while p1 &lt; p2 {
+            let temp = image[p1][p2]
+            image[p1][p2] = image[p2][p1]
+            image[p2][p1] = temp
+            p1 += 1
+            p2 -= 1
+        }
+    }
+    return image
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>585DCD57-D0D9-4F9C-BF2B-D124928FCCBB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Matrix / Array - Reverse or Flip Array </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

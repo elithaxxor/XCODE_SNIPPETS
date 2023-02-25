@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  BlurSettings.swift
+//  PhotoEditor
+//
+//  Created by Adel Al-Aali on 2/16/23.
+//
+
+import Foundation
+import Combine
+
+/// use this to save and persist userdefault values between views
+class BlurSettings : ObservableObject {
+    
+    
+    @Published var backgroundBlur : Double = 0
+    var subscriptions = Set&lt;AnyCancellable&gt;()
+    var userDefaultKey = "backgroundBlur"
+    
+    init() {
+        backgroundBlur = UserDefaults.standard.double(forKey: userDefaultKey)
+        
+        $backgroundBlur.sink{ [unowned self] value in
+            UserDefaults.standard.setValue(value, forKey: self.userDefaultKey  )
+        }.store(in: &amp;subscriptions)
+    }
+}
+
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>43E2EB47-BD0E-4F9E-A626-F42C74418781</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Combine - Saving and  Persisting Data (UserDefaults) </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
