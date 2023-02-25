@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+// MARK: Function that checks for dollar symbol, and decimal placeholders; if true, then reset
+func removeSymbolandDecimal(hasSymbol: Bool = true, hasDecimalHolder: Bool = true) -&gt; String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+    if hasSymbol == false {
+        formatter.currencySymbol = ""
+    }
+    if hasDecimalHolder == false {
+        formatter.maximumFractionDigits = 0
+    }
+    return formatter.string(from: self as NSNumber) ?? twoDecimalPlaceholder
+}
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>20AAA908-AFE3-4EE8-A191-2440D55D6453</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>DOLLAR - CHECKER - Extension </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

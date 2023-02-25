@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Foundation
+import UIKit
+
+// Animates a double tap heart action. Functions simualry to the like feature on Instagram. 
+class Animate {
+    
+    lazy var container = UIView()
+    lazy var layoutConstraint = NSLayoutConstraint()
+    
+    
+    init (container: UIView, layOutConstraint: NSLayoutConstraint) {
+        self.container = container
+        self.layoutConstraint = layoutConstraint
+    }
+    
+    func animate (completion: @escaping () -&gt; Void) {
+        
+        layoutConstraint.constant = 100
+        UIView.animate(withDuration: 0.7,
+                       delay: 0,
+                       usingSpringWithDamping: 0.6,
+                       initialSpringVelocity: 2,
+                       options: .curveLinear,
+                       animations: { [weak self] in
+            self?.container.layoutIfNeeded()
+        }) { [weak self] (_) in
+            self?.container.layoutIfNeeded()
+            completion()
+            
+        }
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F31E94F5-C5F8-4B1F-9FC8-047B32CF706B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Animate : Double Tap Like Button</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

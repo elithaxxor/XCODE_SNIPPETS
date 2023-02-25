@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  Combine_SwiftUI_Timer.swift
+//  AlgosSwift
+//
+//  Created by Adel Al-Aali on 2/16/23.
+//
+
+
+
+
+import Foundation
+import SwiftUI
+
+
+/// Use to broadcast and publish data between views in SwiftUI
+/// receiveBroadcast recieves publisher from broadcast
+/// 
+
+@main struct broadcast {
+    @Published var order = receiveBroadcast()
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .environmentObject(order)
+        }
+    }
+}
+
+class receiveBroadcast : ObservableObject {
+    var Model = ["hello", "world", "hows"]
+    var items = [Model]()
+    
+    
+    var dataStream : Int {
+        if items.count &gt; 0 {
+            items.append(item)
+        }
+        else {
+            return 0
+        }
+    }
+    
+    
+    /// indexes the first element of model
+    func remove(item: Model) {
+        if let index = items.firstIndex(of: item)
+            items.remove(at: index)
+    }
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>697E2D97-CCDD-4FD7-A2D4-33248CCE1DC3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Combine - Observable Object - Broadcast /  Publish Data </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

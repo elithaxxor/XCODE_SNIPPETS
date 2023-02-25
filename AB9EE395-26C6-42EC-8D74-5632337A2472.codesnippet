@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>func duplicateZeros(_ arr: inout [Int]) {
+    var start = 0
+    var end = arr.count
+    var idx = 0
+    while (idx &lt; end) {
+        if (arr[idx] == 0 ) {
+            idx += 1
+            arr.insert(0, at: idx)
+            arr.removeLast()
+        }
+         idx += 1
+    }
+    print (arr)
+
+}
+
+var dupArr = [1, 3, 4 , 5, 2 , 9 , 2]
+duplicateZeros(arr: dupArr)
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AB9EE395-26C6-42EC-8D74-5632337A2472</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Array - Find Duplicate Zeros</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

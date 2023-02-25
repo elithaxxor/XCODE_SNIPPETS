@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // current value subject is used to display the current data stream value
+    var textViewCurrentValue  = CurrentValueSubject&lt;String, Never&gt; ("hello world")
+    var subscriptions = Set&lt;AnyCancellable&gt; ()
+    
+    // Current Value Subject --&gt; Usse compact map to coalesc nil
+    func currentValueSubject() {
+        label = UILabel()
+        textViewCurrentValue
+            .compactMap({$0}) //
+            .map ({"you typed:  \(0)"})
+            .assign(to: \.text, on: label)
+            .store(in: &amp;subscriptions)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>093A8074-9CA5-4248-A28D-D60324364E99</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Combine - Current Value Subject / Compact Map</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

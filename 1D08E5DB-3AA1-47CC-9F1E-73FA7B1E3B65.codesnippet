@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+@IBDesignable
+internal class gestureRecognizer {
+    
+    
+    @IBOutlet weak var greenView : UIView!
+
+    
+    override func viewDidLoad () {
+        super.viewDidLoad() {
+             private let panGesture = UIPanGestureRecognizer(target, self, action: #selector(panned))
+            greenView.addGestureRecognizer(panGesture)
+        }
+        
+        internal func panned(_ gesture : UIPanGestureRecognizer) {
+            private let translation = gesture.translation(in: greenView)
+            
+            // influences the frames position relative to the pan moveme
+            greenView.frame.origin.x += translation.x
+            greenView.frame.origin.y += translation.y
+            
+            gesture.setTranslation(.zero, in: greenView)
+
+        }
+    }
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1D08E5DB-3AA1-47CC-9F1E-73FA7B1E3B65</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Gesture Recognizer </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

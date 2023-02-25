@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+//  ResetBoard.swift
+//  ConnectFour
+//
+//  Created by Adel Al-Aali on 1/21/23.
+//
+
+// MARK: This is where the board functionality is processed
+// the board will CRUD -- Quick access via shared
+
+import Foundation
+import UIKit
+
+internal class BoardFunctions {
+    
+    internal var shared = BoardFunctions()
+    
+    // MARK: Start of Board CRUD
+    
+    
+    //MARK: FETCH
+    internal func fetchItem(_ indexPath: IndexPath) -&gt; Board { return board[indexPath.section][indexPath.item] } // MARK: Fetch
+    
+    
+    //MARK: Bottom Fetch
+    //--&gt; This Function emulates dropping a coin down the board, the lowest possible position will be rendered
+    internal func fetchEmptyPosFromLowestRow (col : Int) -&gt; Board? {
+        for row in (0...5).reversed() {
+            let item = board[row][col]
+            if item.isEmpty() { return item }
+        }; return nil
+    }
+
+    // MARK: DELETE
+    internal func resetBoard() {
+        for r in 0...5 {
+            board.removeAll()
+            _ = Board().color
+            var arr = [Board]()
+
+            for c in 0...5 {
+                let indexPath = IndexPath.init(row: r, section: c)
+                let item = Board(indexPath: indexPath, color: Board.Color.e)
+                arr.append(item)
+            }
+            board.append(arr) // FIX
+        }
+    }
+
+    // MARK: UpdateBoard with new player piece
+    //-&gt; receives item from function, and updates indexPath
+    internal func updateBoard(_ item: Board) {
+            let boardInit = Board.init()
+            if let indexPath = item.indexPath {
+                board[indexPath.section][indexPath.item] = item
+            }
+            board[boardInit.indexPath.section][boardInit.indexPath.item] = item
+    }
+    
+    // MARK: Check if board is full
+    internal func isBoardFull()-&gt; Bool {
+        for row in board { for col in board { if col.isEmpty {   print("[!] Board is full! ") ;return false }} }
+        print("[!] Board is full! ")
+        return true
+    }
+    // MARK: Check if empty
+    internal func isReset() { print("[!] is Empty? \(board.isEmpty)") }
+   
+    // MARK: To print board
+    internal func printBoard() {
+        for r in 1...5 {
+            var rowIndexPath = IndexPath.init(index: r)
+            let pos = Board(indexPath: rowIndexPath)
+            print("[BOARD] [ROW] - \(r)");
+            print("[BOARD] [IndexPath] --&gt; \(rowIndexPath)");
+            
+        }; for c in 1...5 {
+            var colIndexPath = IndexPath.init(index: c)
+            var posC = Board(indexPath: colIndexPath)
+            print("[BOARD] [ROW] - \(c) ");
+            print("[BOARD] [IndexPath] --&gt; \(colIndexPath)");
+        }
+    }
+    
+    // TODO: MAY HAVE TO ADD func resetCells (from containerview class)
+    
+
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8256BA9B-5BB5-49A3-90DB-C0CC330B339B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Matrix - Board Functions</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    // Create an alphabet dict
+    var dict: [Int : Character] = [
+        1 : "a",
+        2 : "b",
+        3 : "c",
+        4 : "d",
+        5 : "e",
+        6 : "f",
+        7 : "g",
+        8 : "h",
+        9 : "i",
+        10 : "j"
+        11 : "k",
+        12 : "l",
+        13  : "m",
+        14 : "n",
+        15: "o",
+        16: "p",
+        17 : "q"
+        18 : "r",
+        19 : "s",
+        20 : "t",
+        21 : "u",
+        23 : "v"
+        24 : "w"
+        25 : "x,
+        26 : "y",
+        27 : "z"
+    ]
+    print(dict)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>686CDF17-7F05-4FC5-B93A-3D1899B0AEAA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>HashMap - Alphabet Map </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

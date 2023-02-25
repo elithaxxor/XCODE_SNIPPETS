@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  Combine_URL_Fetch.swift
+//  AlgosSwift
+//
+//  Created by Adel Al-Aali on 2/16/23.
+//
+
+import Foundation
+
+
+/// Uses combine to fetch simple data
+class APIManager {
+    
+    static let shared = APIManager()
+    private var cancellables = Set&lt;AnyCancellable&gt;()
+    private var baseURL = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json"
+    
+    @Published var data : [Schools] = []
+    
+    init() {
+        getDataSimple()
+    }
+    
+    // This is a simple function to get data using Combine
+    func getDataSimple() {
+        print("running Simple data grab")
+        
+        print("[simple] starting url parse on \(baseURL)")
+        guard let url = URL(string: baseURL) else { return }
+        URLSession.shared.dataTaskPublisher(for: url)
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.main)
+            .tryMap { (data, response) in
+                guard
+                    let response = response as? HTTPURLResponse,
+                    response.statusCode &gt;= 200 &amp;&amp; response.statusCode &lt; 300
+                else {
+                    throw URLError(.badServerResponse)
+                }
+                print("[simple] found data \(data.description)")
+                return data
+            }
+            .decode(type: [Schools].self, decoder: JSONDecoder())
+            .sink { (completion) in
+                print("Simple API Completion \(completion)")
+            } receiveValue: { [weak self] (data) in
+                self?.data = data
+                print(data.first)
+            }
+            .store(in: &amp;cancellables)
+    }
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EDD3CAA2-04D5-450F-BCC3-5D3865D0D44D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Combine - Fetch Data API </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

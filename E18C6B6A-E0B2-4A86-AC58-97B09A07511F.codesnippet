@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // MARK: DELETE
+    internal func resetBoard() {
+        for r in 0...5 {
+            board.removeAll()
+            _ = Board().color
+            var arr = [Board]()
+
+            for c in 0...5 {
+                let indexPath = IndexPath.init(row: r, section: c)
+                let item = Board(indexPath: indexPath, color: Board.Color.e)
+                arr.append(item)
+            }
+            board.append(arr) // FIX
+        }
+    }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E18C6B6A-E0B2-4A86-AC58-97B09A07511F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Matrix - Board - Reset Board</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    func downlaodJSON(completed: @escaping () -&gt; ()) {
+        let url = URL(string: "https://api.opendota.com/api/heroStats")
+        
+        URLSession.shared.dataTask(with: url!) { (data, response?, error) in
+            
+            if error == nil {
+                do {
+                    self.heroes = try JSONDecoder().decode([HeroStats].self, from: data!)
+                    
+                    DispatchQueue.main.async {
+                        completed()
+                    }
+                }catch {
+                        print("JSON Error")
+                    }
+                }
+            }.resume()
+        }
+    
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2B049C9C-9F88-4AC9-B223-F6727492E71C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Download JSON </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

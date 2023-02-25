@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+    public func userSignIn(with userName : String, completion: @escaping (Bool) -&gt; Void ) {
+        print("[+] Start, client logging in..")
+        print("[!] STATS: [USER] \(String(describing: currentUser)) [STATUS]: [\(String(describing: connectionStatus)) \(String(describing: baseURL))")
+        
+        // TODO: ADD ALERT TO SCREEN
+        guard !userName.isEmpty else {
+            completion (false)
+            print(APIError.userNameError)
+            return
+        }
+        guard let token = APIkeys[userName.lowercased()] else {
+            completion(false)
+            print(APIError.tokenError)
+            print(ErrorPayload.self)
+            return
+        }
+        
+        print("[!] Token to be used \(token)")
+        // uses ^^ userName &amp;&amp; token to connect API
+        client.connectUser(userInfo: UserInfo(id: userName,
+                                              name: userName),
+                           token: Token(stringLiteral: token))
+        // closure,if error is nill then close out.
+        { error in
+            completion(error == nil)
+        }
+        print("[!] Error.. ")
+        
+    }
+    </string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>75ACA912-E2B8-4837-A4F8-C629EA5E4728</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>API - Login </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

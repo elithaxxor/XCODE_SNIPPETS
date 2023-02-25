@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+// MARK: Convert Int to String- Date/Time format
+extension Int {
+    var formatIntToDateTime: String {
+        let(h,m,s) = (self / 3600, (self % 3600) / 60, (self % 3600) % 60)
+
+        let h_string = h &lt; 10 ? "0\(h)" : "0\(h)"
+        let m_string = m &lt; 10 ? "0\(m)" : "0\(m)"
+        let s_string = s &lt; 10 ? "0\(s)" : "0\(s)"
+        return "\(h_string):\(m_string):\(s_string)"
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>061304F9-367D-43F8-A39A-5CE418CC3DF9</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Formatter - Convert or String to Date / Time format</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+// TODO: Take user input for alert view and pass on to verificatno class.
+private func showAlertTextField() {
+    print("[!] User is Editing the symbol via the alert view.")
+    let notifiedSymbol = Notification.Name.symbol
+    let alertController = UIAlertController(title: "enter new symbol", message: "\(notifiedSymbol) not valid", preferredStyle: .alert)
+    
+    let confirmEditBtn = UIAlertAction(title: "add", style: .default) { [weak self] (edit) in
+        print("[!] Editing UITextField ")
+        if let alertField = alertController.textFields?.first, let text = alertField.text {
+            NotificationCenter.default.post(name: .symbol, object: text)
+            print("[!] User entered \(text)")
+            self?.reloadData()
+            self?.validateField(symbol: text)
+            self?.dispatchGroup.leave()
+        }
+    }
+    let cancelAlertBtn = UIAlertAction(title: "dismiss", style: .cancel) { [weak self] (cancel) in
+        DispatchQueue.global(qos: .userInitiated).async {
+            self?.reloadData()
+            self?.dispatchGroup.leave()
+        }
+        
+    }
+    alertController.addTextField { textField in (textField)
+        textField.placeholder = "$symbol"
+        print("[!] [ALERT-TEXT-FIELD] \(textField.text)")
+    }
+    
+    alertController.addAction(confirmEditBtn)
+    alertController.addAction(cancelAlertBtn)
+    self.present(alertController, animated: true, completion: nil)
+    
+}
+// TODO: Programmatitcally add the alert view and have storyboard szfeconize it.
+
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>56651C9C-D96C-4824-BB8F-21E91E52E5D3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>ALERT TextField </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

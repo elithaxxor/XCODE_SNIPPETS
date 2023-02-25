@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  ViewController.swift
+//  FaceID
+//
+//  Created by Adel Al-Aali on 1/22/23.
+//
+
+
+
+
+import UIKit
+import LocalAuthentication
+import LocalAuthenticationEmbeddedUI
+
+
+
+
+class HomeViewController: UIViewController {
+    
+    
+
+     var button : UIButton = {
+        let b = UIButton()
+            
+        b.translatesAutoresizingMaskIntoConstraints = false
+        b.titleLabel?.textAlignment = .center
+        b.widthAnchor.constraint(equalToConstant: 10)
+        b.heightAnchor.constraint(equalToConstant: 200)
+//        b.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+//        b.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+//
+        
+        b.translatesAutoresizingMaskIntoConstraints = false
+        b.titleLabel?.textAlignment = .center
+        b.setTitle("authorize", for: .normal)
+        b.backgroundColor = .systemGreen
+        
+        b.addTarget(HomeViewController.self,
+                    action: #selector(didTapButton),
+                    for: .touchUpInside)
+        
+        return b
+        
+    }()
+    
+    @objc func didTapButton() {
+        var error : NSError? = nil
+        let context = LAContext()
+        if context.canEvaluatePolicy(
+            .deviceOwnerAuthenticationWithBiometrics,
+            error: &amp;error) {
+            
+            let reason = "open sesame"
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] success, error in
+                DispatchQueue.main.async {
+                guard  success, error == nil
+                else {  // fail
+                    let alert = UIAlertController(
+                        title: "guess again..",
+                        message: "try bruteforce ;)",
+                        preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "leave",
+                                                  style: .cancel,
+                                                  handler: nil))
+                    self?.present(alert, animated: true)
+                    return
+                    
+                }
+                print("success")
+                let vc = UIViewController()
+                vc.title = "enter young padawon"
+                vc.view.backgroundColor = .systemBlue
+                self?.present(UINavigationController(rootViewController: vc),
+                              animated: true,
+                              completion: nil)
+                
+            }
+        }
+    }}
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(button)
+        // Do any additional setup after loading the view.
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E31E669A-BDCB-4053-B4AF-D32C86B4DD9F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SAMPLE - FACE-ID Secure Login</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

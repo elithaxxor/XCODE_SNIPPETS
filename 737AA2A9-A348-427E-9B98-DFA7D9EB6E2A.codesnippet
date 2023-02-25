@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        Ellipse()
+            .fill(Color.green)
+            .foregroundColor(.pink)
+           // .stroke()
+          //   .stroke(Color.red)
+         //   .stroke(Color.blue, lineWidth: 30)
+         //   .trim(from: 0.2, to: 1.0)
+          //  .stroke(Color.orange, lineWidth: 50)
+            
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>737AA2A9-A348-427E-9B98-DFA7D9EB6E2A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SwiftUI : Shape - Ellipse </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

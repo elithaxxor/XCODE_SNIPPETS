@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// USE IF LET 
+
+func containsNearbyDuplicate(_ nums: [Int], _ k: Int) -&gt; Bool {
+    
+    var hashMap = [Int: Int]()
+    for (idx, val) in nums.enumerated()
+    {
+        if let num = hashMap[val] {
+            if abs(idx - num) &lt;= k
+            {
+                print("num \(num)")
+                print(idx - num)
+                return true
+            }
+        }
+        hashMap[val] = idx
+    }
+    return false
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9E52AB59-3E06-4DBD-8749-A1817C476530</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>HashMap - Set dict val to var </string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
